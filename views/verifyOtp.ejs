@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Verify Otp</title>
+</head>
+<body>
+<form method="POST" action="/verify">
+	<input type="text" id="email" name="email" value="<%= email %>" disabled>
+	<input type="text" name="hash" value="<%= hash %>" style="display: none;">
+	<input type="text" name="otp">
+	<input type="Submit">
+</form>
+<button onclick="resend()">Resend</button>
+</body>
+<script type="text/javascript">
+function resend()
+{
+	location.reload();
+}	
+</script>
+</html>
