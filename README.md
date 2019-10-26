@@ -17,3 +17,10 @@ How to start???
 6. You also have an opton to resend the OTP.
 
 **Passoword expiry would be added in further updates**
+
+Test Cases:
+1. Wrong OTP
+2. Correct OTP
+3. Resend OTP
+4. Resend OTP, new OTP received but then also enter old OTP
+5. Resend OTP, enter new OTP
