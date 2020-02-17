@@ -4,19 +4,13 @@ var nodemailer=require('nodemailer');
 var transporter = nodemailer.createTransport({
 	service:'gmail',
 	auth:{
-		user: '***********************',
-		pass: '***********************'
+		user: 'vikrantkumar158@gmail.com',
+		pass: 'windowsvista8986761191$'
 	}
 });
 
-exports.send = (email,otp,cb)=>
+exports.send = (mailOptions,cb)=>
 {
-	var mailOptions={
-		from: '***********************',
-		to: email,
-		subject: 'OTP Verification',
-		text: 'Your OTP is '+otp+'. It is valid for only five miniutes'
-	}
 	transporter.sendMail(mailOptions,(err,info)=>{
 		if(err)
 			cb(err);

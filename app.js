@@ -1,13 +1,14 @@
 var express=require('express');
 var redirect=require('express-redirect');
+var cors=require('cors');
 
 var app=express();
 redirect(app);
 var router=express.Router();
 var server=require('http').createServer(app);
 
+app.use(cors());
 app.use(express.json());
-
 app.use(express.urlencoded({extended: true}));
 
 server.listen(3000, function () {

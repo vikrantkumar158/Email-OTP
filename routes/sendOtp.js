@@ -4,7 +4,7 @@ var bcrypt=require('../models/bcrypt');
 
 module.exports = (app)=>{
 	
-	app.get('/send',(req,res)=>{
+	app.get('/',(req,res)=>{
 		res.render('sendOtp.ejs');
 	});
 
@@ -17,4 +17,21 @@ module.exports = (app)=>{
 			res.render('verifyOtp.ejs',{email:req.body.email,hash:y});
 		});
 	});
+
+	app.post('/api/send',(req,res)=>{
+		var x=generate.generateOtp();
+		var y=bcrypt.encrypt(x);
+		var mailOptions={
+			from: 'vikrantkumar158@gmail.com',
+			to: req.body.email,
+			subject: 'Email Verification',
+			html: 'Your OTP for Email Verification is <b>'+x+'</b>'
+		}
+		otp.send(mailOptions,(err,data)=>{
+			if(err)
+				res.send(err);
+			res.send(y);
+		});
+	});
+
 };
