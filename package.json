@@ -51,6 +51,9 @@
     "util": "^0.12.1",
     "xterm": "^4.2.0-vscode1"
   },
+  "devDependencies": {
+    "https-localhost": "^4.4.1"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vikrantkumar158/Email-OTP.git"
