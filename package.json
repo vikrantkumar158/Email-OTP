@@ -1,0 +1,19 @@
+{
+  "name": "emailotp",
+  "version": "1.0.0",
+  "description": "Get your email confirmed by OTP. Just a begineer level code.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vikrantkumar158/Email-OTP.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vikrantkumar158/Email-OTP/issues"
+  },
+  "homepage": "https://github.com/vikrantkumar158/Email-OTP#readme"
+}
