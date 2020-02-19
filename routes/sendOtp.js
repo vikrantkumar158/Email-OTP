@@ -11,7 +11,13 @@ module.exports = (app)=>{
 	app.post('/send',(req,res)=>{
 		var x=generate.generateOtp();
 		var y=bcrypt.encrypt(x);
-		otp.send(req.body.email,x,(err,data)=>{
+		var mailOptions={
+			from: 'vikrantkumar158@gmail.com',
+			to: req.body.email,
+			subject: 'Email Verification',
+			html: 'Your OTP for Email Verification is <b>'+x+'</b>'
+		}
+		otp.send(mailOptions,(err,data)=>{
 			if(err)
 				res.send(err);
 			res.render('verifyOtp.ejs',{email:req.body.email,hash:y});
