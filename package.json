@@ -11,6 +11,12 @@
      "node": "10.15.2",
      "npm": "6.13.7"
    },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vikrantkumar158/Email-OTP.git"
+  },
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "bcrypt": "^3.0.6",
     "cors": "^2.8.5",
@@ -22,14 +28,9 @@
     "nodemon": "^2.0.2",
     "otp-generator": "^1.1.0",
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/vikrantkumar158/Email-OTP.git"
-  },
-  "author": "",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/vikrantkumar158/Email-OTP/issues"
   },
+
   "homepage": "https://github.com/vikrantkumar158/Email-OTP#readme"
 }
