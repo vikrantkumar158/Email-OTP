@@ -12,7 +12,7 @@ module.exports = (app)=>{
 		var x=generate.generateOtp();
 		var y=bcrypt.encrypt(x);
 		var mailOptions={
-			from: 'vikrantkumar158@gmail.com',
+			from: process.env.emailID,
 			to: req.body.email,
 			subject: 'Email Verification',
 			html: 'Your OTP for Email Verification is <b>'+x+'</b>'
@@ -28,7 +28,7 @@ module.exports = (app)=>{
 		var x=generate.generateOtp();
 		var y=bcrypt.encrypt(x);
 		var mailOptions={
-			from: 'vikrantkumar158@gmail.com',
+			from: process.env.emailID,
 			to: req.body.email,
 			subject: 'Email Verification',
 			html: 'Your OTP for Email Verification is <b>'+x+'</b>'
