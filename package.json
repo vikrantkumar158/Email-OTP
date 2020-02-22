@@ -26,11 +26,6 @@
     "init": "^0.1.2",
     "nodemailer": "^6.2.1",
     "nodemon": "^2.0.2",
-    "otp-generator": "^1.1.0",
-  },
-  "bugs": {
-    "url": "https://github.com/vikrantkumar158/Email-OTP/issues"
-  },
-
-  "homepage": "https://github.com/vikrantkumar158/Email-OTP#readme"
+    "otp-generator": "^1.1.0"
+  }
 }
