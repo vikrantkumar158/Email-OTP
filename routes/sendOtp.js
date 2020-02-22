@@ -16,7 +16,7 @@ module.exports = (app)=>{
 			to: req.body.email,
 			subject: 'Email Verification',
 			html: 'Your OTP for Email Verification is <b>'+x+'</b>'
-		}
+		};
 		otp.send(mailOptions,(err,data)=>{
 			if(err)
 				res.send(err);
