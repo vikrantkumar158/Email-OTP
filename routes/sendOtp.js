@@ -9,6 +9,7 @@ module.exports = (app)=>{
 	});
 
 	app.post('/send',(req,res)=>{
+		console.log(process.env.emailID);
 		var x=generate.generateOtp();
 		var y=bcrypt.encrypt(x);
 		var mailOptions={
