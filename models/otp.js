@@ -2,7 +2,7 @@
 
 var nodemailer=require('nodemailer');
 var transporter = nodemailer.createTransport({
-	service:'gmail',
+	service:'Yandex',
 	auth:{
 		user: process.env.emailID,
 		pass: process.env.password
