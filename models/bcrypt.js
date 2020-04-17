@@ -1,5 +1,5 @@
 var bcrypt=require('bcrypt');
-var saltRounds=10;
+var saltRounds = 10;
 
 exports.encrypt = (otp)=>
 {

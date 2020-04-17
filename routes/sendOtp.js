@@ -1,6 +1,6 @@
-var otp=require('../models/otp');
+var sendotp=require('../models/sendotp');
 var generate=require('../models/generate');
-var bcrypt=require('../models/bcrypt');
+var otp=require('.././controllers/otp');
 
 module.exports = (app)=>{
 	
@@ -9,35 +9,40 @@ module.exports = (app)=>{
 	});
 
 	app.post('/send',(req,res)=>{
-		console.log(process.env.emailID);
 		var x=generate.generateOtp();
-		var y=bcrypt.encrypt(x);
 		var mailOptions={
 			from: process.env.emailID,
 			to: req.body.email,
 			subject: 'Email Verification',
 			html: 'Your OTP for Email Verification is <b>'+x+'</b>'
 		};
-		otp.send(mailOptions,(err,data)=>{
+		sendotp.send(mailOptions,(err,data)=>{
 			if(err)
 				res.send(err);
-			res.render('verifyOtp.ejs',{email:req.body.email,hash:y});
+			otp.save(req.body.email,x,(error,dataa)=>{
+				if(error)
+					res.send(error);
+				res.render('verifyOtp.ejs',{email:req.body.email});
+			});
 		});
 	});
 
 	app.post('/api/send',(req,res)=>{
 		var x=generate.generateOtp();
-		var y=bcrypt.encrypt(x);
 		var mailOptions={
 			from: process.env.emailID,
 			to: req.body.email,
 			subject: 'Email Verification',
 			html: 'Your OTP for Email Verification is <b>'+x+'</b>'
 		};
-		otp.send(mailOptions,(err,data)=>{
+		sendotp.send(mailOptions,(err,data)=>{
 			if(err)
 				res.send(err);
-			res.send(y);
+			otp.save(req.body.email,x,(error,dataa)=>{
+				if(error)
+					res.send(error);
+				res.end();
+			});
 		});
 	});
 

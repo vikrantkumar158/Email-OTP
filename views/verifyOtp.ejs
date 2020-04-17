@@ -2,11 +2,16 @@
 <html>
 <head>
 	<title>Verify Otp</title>
+	<style type="text/css">
+		.disable {
+			pointer-events: none;
+			background: grey;
+		}
+	</style>
 </head>
 <body>
 <form method="POST" action="/verify">
-	<input type="text" id="email" name="email" value="<%= email %>" disabled>
-	<input type="text" name="hash" value="<%= hash %>" style="display: none;">
+	<input type="text" id="email" name="email" value="<%= email %>" class="disable">
 	<input type="text" name="otp">
 	<input type="Submit">
 </form>
