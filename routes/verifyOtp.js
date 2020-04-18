@@ -4,14 +4,22 @@ var otp=require('.././controllers/otp');
 module.exports = (app)=>
 {
 	app.post('/verify',(req,res)=>{
-		console.log(req.body.email);
 		otp.match(req.body.email,req.body.otp,(err,data)=>{
 			if(err)
 				res.send(err);
-			if(data==true)
-				res.send("Success");
+			if(data==undefined)
+				res.send("OTP Expired. Kindly try to resend it.");
+			else if(data==true)
+			{
+				otp.remove(req.body.email,(error,dataa)=>{
+					if(error)
+						res.send(error);
+					else
+						res.send("Success. Verified.");
+				})
+			}
 			else
-				res.send("Failure");
+				res.send("Failure. Kindly check again.");
 		})
 	});
 }

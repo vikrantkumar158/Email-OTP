@@ -10,7 +10,7 @@ var mongoose=require('mongoose');
 
 var mongoDB='mongodb+srv://Vikrant:mongodb@1401@cluster0-qd890.mongodb.net/OTP';
 
-mongoose.connect(mongoDB,{useNewUrlParser:true});
+mongoose.connect(mongoDB,{useNewUrlParser:true, useCreateIndex: true});
 
 mongoose.connection.on('error',(err)=>{
 	console.log('DB connection error');

@@ -42,8 +42,18 @@ exports.match = (email,code,cb)=>
 		if(err)
 			cb(err);
 		if(data.length==0)
-			cb(null,false);			
+			cb(null,undefined);			
 		else
 			cb(null,bcrypt.match(code,data[0].code));
 	});
+}
+
+exports.remove = (email,cb)=>
+{
+	otp.remove({email: email})
+	.exec((err,data)=>{
+		if(err)
+			cb(err);
+		cb(null,data);
+	})
 }

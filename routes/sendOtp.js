@@ -19,11 +19,14 @@ module.exports = (app)=>{
 		sendotp.send(mailOptions,(err,data)=>{
 			if(err)
 				res.send(err);
-			otp.save(req.body.email,x,(error,dataa)=>{
-				if(error)
-					res.send(error);
-				res.render('verifyOtp.ejs',{email:req.body.email});
-			});
+			else
+			{
+				otp.save(req.body.email,x,(error,dataa)=>{
+					if(error)
+						res.send(error);
+					res.render('verifyOtp.ejs',{email:req.body.email});
+				});
+			}
 		});
 	});
 
@@ -45,5 +48,4 @@ module.exports = (app)=>{
 			});
 		});
 	});
-
 };
