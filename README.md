@@ -16,6 +16,16 @@ How to start???
 5. If correct OTP entered, then Success message is displayed else Failure
 6. You also have an opton to resend the OTP.
 
+**New Features Added**
+1. OTP expire time is 2 minutes
+2. Available for use in other projects as an API
+
+What to do when using as an API
+
+1. Send the email in req.body to https://email-otp.herokuapp.com/api/send
+2. Send the email and otp in req.body to https://email-otp.herokuapp.com/api/verify
+3. At the end if response text received is Success then email is validated else failure in validation or otp expired.
+
 **Passoword expiry would be added in further updates**
 
 Test Cases:
@@ -24,3 +34,4 @@ Test Cases:
 3. Resend OTP
 4. Resend OTP, new OTP received but then also enter old OTP
 5. Resend OTP, enter new OTP
+6. OTP Expired
